@@ -1,8 +1,8 @@
 ---
 const stats = [
 	{ value: '3 de 47', text: 'estudios abordan la tríada completa TIC-TAC-TEP', box: 'bg-navy text-white', num: 'text-amber' },
-	{ value: '34 % · 70 %', text: 'conectividad rural frente a urbana en Cundinamarca', box: 'bg-[#0b625f] text-white', num: 'text-amber' },
-	{ value: '0', text: 'metas educativas del PDDC con enfoque de empoderamiento (TEP)', box: 'bg-[#e3f1f0] text-navy', num: 'text-navy' },
+	{ value: '34 % · 70 %', text: 'conectividad rural frente a urbana en Cundinamarca', box: 'bg-[#a3154f] text-white', num: 'text-amber' },
+	{ value: '0', text: 'metas educativas del PDDC con enfoque de empoderamiento (TEP)', box: 'bg-[#fde7ef] text-navy', num: 'text-navy' },
 ];
 
 const retos = [
@@ -18,11 +18,11 @@ const oportunidades = [
 ];
 
 const ruta = [
-	{ n: 1, label: 'Diagnosticar', bg: '#8ecbc6', fg: '#083547' },
-	{ n: 2, label: 'Formar', bg: '#4aa5a0', fg: '#083547' },
-	{ n: 3, label: 'Adaptar', bg: '#2f7f84', fg: '#083547' },
-	{ n: 4, label: 'Participar', bg: '#0b625f', fg: '#ffffff' },
-	{ n: 5, label: 'Evaluar', bg: '#083547', fg: '#ffffff' },
+	{ n: 1, label: 'Diagnosticar', bg: '#f7a6c4', fg: '#4a1942' },
+	{ n: 2, label: 'Formar', bg: '#e8477f', fg: '#4a1942' },
+	{ n: 3, label: 'Adaptar', bg: '#c93a72', fg: '#4a1942' },
+	{ n: 4, label: 'Participar', bg: '#a3154f', fg: '#ffffff' },
+	{ n: 5, label: 'Evaluar', bg: '#4a1942', fg: '#ffffff' },
 ];
 ---
 
@@ -30,7 +30,7 @@ const ruta = [
 	<div class="mx-auto max-w-[900px] px-6 lg:max-w-[1200px]">
 		<div class="lg:mx-auto lg:max-w-[900px]">
 			<div class="flex flex-wrap items-center gap-2.5">
-				<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0b625f]">
+				<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#a3154f]">
 					Estación 5 · Cumbre
 				</span>
 				<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Infografía</span>
@@ -40,7 +40,7 @@ const ruta = [
 				Los retos, las oportunidades y la ruta de ascenso en una sola imagen para consultar y compartir.
 			</p>
 
-			<div id="infografia" class="mt-12 rounded-[28px] border border-[#cfe3e1] bg-white p-8 md:p-[30px]">
+			<div id="infografia" class="mt-12 rounded-[28px] border border-[#f0d3da] bg-white p-8 md:p-[30px]">
 				<h3 class="text-center font-display text-[23px] font-bold text-navy">Del acceso a la comunidad: retos, oportunidades y ruta</h3>
 
 				<div class="mt-6 grid gap-3 md:grid-cols-3">
@@ -53,14 +53,14 @@ const ruta = [
 				</div>
 
 				<div class="mt-6 grid gap-4 md:grid-cols-2">
-					<div class="rounded-[18px] bg-[#fff6e6] px-[18px] py-5">
-						<h4 class="font-display text-[17px] font-semibold text-[#a86a00]">Retos</h4>
+					<div class="rounded-[18px] bg-[#fff0e0] px-[18px] py-5">
+						<h4 class="font-display text-[17px] font-semibold text-[#b04a1a]">Retos</h4>
 						<ul class="mt-3 space-y-2.5 text-[13px] leading-5 text-navy">
 							{retos.map((r) => <li><strong class="font-bold">{r.b}</strong> {r.t}</li>)}
 						</ul>
 					</div>
-					<div class="rounded-[18px] bg-[#e3f1f0] px-[18px] py-5">
-						<h4 class="font-display text-[17px] font-semibold text-[#0b625f]">Oportunidades</h4>
+					<div class="rounded-[18px] bg-[#fde7ef] px-[18px] py-5">
+						<h4 class="font-display text-[17px] font-semibold text-[#a3154f]">Oportunidades</h4>
 						<ul class="mt-3 space-y-2.5 text-[13px] leading-5 text-navy">
 							{oportunidades.map((o) => <li><strong class="font-bold">{o.b}</strong> {o.t}</li>)}
 						</ul>
@@ -83,7 +83,7 @@ const ruta = [
 			</div>
 
 			<div class="mt-8 flex flex-wrap justify-center gap-3">
-				<a href="#" download class="rounded-full bg-[#0b625f] px-5 py-3 text-[13px] font-bold text-white hover:brightness-110">Descargar infografía (PDF)</a>
+				<a href="#" download class="rounded-full bg-[#a3154f] px-5 py-3 text-[13px] font-bold text-white hover:brightness-110">Descargar infografía (PDF)</a>
 				<button type="button" data-fullscreen-infographic class="rounded-full border border-teal-soft px-5 py-3 text-[13px] font-bold text-navy hover:bg-mist">Ver en tamaño completo</button>
 			</div>
 		</div>

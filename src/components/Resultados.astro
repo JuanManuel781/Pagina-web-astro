@@ -1,8 +1,8 @@
 ---
 const bars = [
-	{ key: 'TEP', value: 7, color: '#0b625f' },
-	{ key: 'TAC', value: 15, color: '#4aa5a0' },
-	{ key: 'TIC', value: 20, color: '#8ecbc6' },
+	{ key: 'TEP', value: 7, color: '#a3154f' },
+	{ key: 'TAC', value: 15, color: '#e8477f' },
+	{ key: 'TIC', value: 20, color: '#f7a6c4' },
 ];
 const max = 20;
 
@@ -21,7 +21,7 @@ const stops = [
 	<div class="mx-auto max-w-[900px] px-6 lg:max-w-[1200px]">
 		<div class="mx-auto lg:mx-0 lg:max-w-[900px]">
 			<div class="flex flex-wrap items-center gap-2.5">
-				<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0b625f]">
+				<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#a3154f]">
 					Estación 3 · El ascenso
 				</span>
 				<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Presentación Prezi</span>
@@ -32,18 +32,18 @@ const stops = [
 			</p>
 		</div>
 
-		<div class="mt-12 overflow-hidden rounded-[28px] border border-[#d3e3e1]">
-			<div class="flex items-center justify-between border-b border-[#d3e3e1] px-4 py-3.5 text-[12.5px]">
+		<div class="mt-12 overflow-hidden rounded-[28px] border border-[#f3d9df]">
+			<div class="flex items-center justify-between border-b border-[#f3d9df] px-4 py-3.5 text-[12.5px]">
 				<strong class="font-bold text-navy">Prezi · Análisis de resultados</strong>
 				<span class="text-navy/60">Parada <span data-current>1</span> de {stops.length}</span>
 			</div>
 
-			<div class="bg-[#f3f9f8] px-4 py-6 md:px-20">
+			<div class="bg-[#fff6f2] px-4 py-6 md:px-20">
 				<div class="rounded-[18px] bg-white shadow-[0_6px_24px_rgba(8,53,71,0.10)]">
 					{stops.map((s, i) => (
 						<article data-slide class={`min-h-[413px] items-center gap-10 px-8 py-10 md:grid-cols-2 ${i === 0 ? 'grid' : 'hidden'}`}>
 							<div>
-								<p class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-[#a86a00]">{s.kicker}</p>
+								<p class="text-[10.5px] font-bold uppercase tracking-[0.14em] text-[#b04a1a]">{s.kicker}</p>
 								<h3 class="mt-3 font-display text-[28px] font-bold leading-tight text-navy">{s.title}</h3>
 								<p class="mt-3 text-[14px] text-navy/80">{s.text}</p>
 							</div>
@@ -52,7 +52,7 @@ const stops = [
 									{bars.map((b) => (
 										<div class={`flex items-center gap-3 text-[11px] font-bold text-navy transition-opacity ${s.focus.includes(b.key) ? '' : 'opacity-30'}`}>
 											<span class="w-9">{b.key}</span>
-											<div class="h-[22px] flex-1 overflow-hidden rounded bg-[#eef4f3]">
+											<div class="h-[22px] flex-1 overflow-hidden rounded bg-[#fbeee9]">
 												<div class="h-full rounded" style={`width:${(b.value / max) * 100}%;background:${b.color}`}></div>
 											</div>
 											<span class="w-5">{b.value}</span>
@@ -65,11 +65,11 @@ const stops = [
 					))}
 				</div>
 
-				<div class="mt-6 flex items-center justify-center gap-4 text-[12.5px] font-semibold text-[#0b625f]">
-					<button type="button" data-prev aria-label="Parada anterior" class="grid size-9 place-items-center rounded-full border border-teal-soft bg-white text-[#0b625f] hover:bg-mist">
+				<div class="mt-6 flex items-center justify-center gap-4 text-[12.5px] font-semibold text-[#a3154f]">
+					<button type="button" data-prev aria-label="Parada anterior" class="grid size-9 place-items-center rounded-full border border-teal-soft bg-white text-[#a3154f] hover:bg-mist">
 						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 5-7 7 7 7"></path></svg>
 					</button>
-					<button type="button" data-next aria-label="Parada siguiente" class="grid size-9 place-items-center rounded-full bg-[#0b625f] text-white hover:brightness-110">
+					<button type="button" data-next aria-label="Parada siguiente" class="grid size-9 place-items-center rounded-full bg-[#a3154f] text-white hover:brightness-110">
 						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"></path></svg>
 					</button>
 					<button type="button" data-fullscreen class="ml-3 underline underline-offset-2">Pantalla completa</button>
@@ -84,7 +84,7 @@ const stops = [
 					<button
 						type="button"
 						data-tab={i}
-						class="h-full w-full rounded-xl border border-[#d3e3e1] bg-white px-3.5 py-3 text-left data-[active=true]:border-amber data-[active=true]:bg-[#fff8ea]"
+						class="h-full w-full rounded-xl border border-[#f3d9df] bg-white px-3.5 py-3 text-left data-[active=true]:border-amber data-[active=true]:bg-[#fff0e0]"
 					>
 						<span class="block text-[11px] font-bold text-navy/80">{s.tab}</span>
 						<span class="mt-1.5 block font-display text-[16px] font-semibold text-navy">{s.label}</span>

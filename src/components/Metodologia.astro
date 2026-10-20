@@ -4,10 +4,10 @@ const h = 24;
 const d = 26;
 
 const cubes = [
-	{ n: 1, x: 206, y: 47, top: '#e3f1f0', left: '#8ecbc6', right: '#4aa5a0', text: '#083547' },
-	{ n: 2, x: 122, y: 89, top: '#4aa5a0', left: '#2f7f84', right: '#245f66', text: '#083547' },
-	{ n: 3, x: 290, y: 89, top: '#8ecbc6', left: '#4aa5a0', right: '#2f7f84', text: '#083547' },
-	{ n: 4, x: 206, y: 134, top: '#f2b441', left: '#c98a1e', right: '#9a5f08', text: '#083547' },
+	{ n: 1, x: 206, y: 47, top: '#fde7ef', left: '#f7a6c4', right: '#e8477f', text: '#4a1942' },
+	{ n: 2, x: 122, y: 89, top: '#e8477f', left: '#c93a72', right: '#9c2a5a', text: '#4a1942' },
+	{ n: 3, x: 290, y: 89, top: '#f7a6c4', left: '#e8477f', right: '#c93a72', text: '#4a1942' },
+	{ n: 4, x: 206, y: 134, top: '#ffa06b', left: '#e08a4f', right: '#b8602a', text: '#4a1942' },
 ];
 
 const rooms = [
@@ -18,10 +18,10 @@ const rooms = [
 ];
 ---
 
-<section id="metodologia" class="scroll-mt-20 bg-[#f3f9f8] py-[78px]">
+<section id="metodologia" class="scroll-mt-20 bg-[#fff6f2] py-[78px]">
 	<div class="mx-auto max-w-[1200px] px-6">
 		<div class="flex flex-wrap items-center gap-2.5">
-			<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0b625f]">
+			<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#a3154f]">
 				Estación 2 · Trazar la ruta
 			</span>
 			<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Metaverso</span>
@@ -31,15 +31,15 @@ const rooms = [
 			Recorre en un espacio 3D cómo se construyó la evidencia: cada sala corresponde a un momento del método y del análisis.
 		</p>
 
-		<div class="mt-12 grid items-center gap-10 rounded-[28px] bg-[#0d2f3c] p-10 md:grid-cols-[1fr_1fr] md:px-12 md:py-14">
+		<div class="mt-12 grid items-center gap-10 rounded-[28px] bg-[#5c1f4f] p-10 md:grid-cols-[1fr_1fr] md:px-12 md:py-14">
 			<svg viewBox="-2 -2 416 210" class="mx-auto w-full max-w-[420px]" role="img" aria-label="Plataforma isométrica con cuatro salas numeradas">
-				<polygon points="206,0 412,102 206,206 0,102" fill="#124a56" stroke="#4aa5a0" stroke-width="1.5"></polygon>
+				<polygon points="206,0 412,102 206,206 0,102" fill="#6e2a5e" stroke="#e8477f" stroke-width="1.5"></polygon>
 				{cubes.map((c) => (
 					<g>
 						<polygon points={`${c.x - w},${c.y} ${c.x},${c.y + h} ${c.x},${c.y + h + d} ${c.x - w},${c.y + d}`} fill={c.left}></polygon>
 						<polygon points={`${c.x + w},${c.y} ${c.x},${c.y + h} ${c.x},${c.y + h + d} ${c.x + w},${c.y + d}`} fill={c.right}></polygon>
 						<polygon points={`${c.x},${c.y - h} ${c.x + w},${c.y} ${c.x},${c.y + h} ${c.x - w},${c.y}`} fill={c.top}></polygon>
-						<text x={c.x} y={c.y + 4} text-anchor="middle" font-size="11" font-weight="700" font-family="Lexend, sans-serif" fill={c.text}>{c.n}</text>
+						<text x={c.x} y={c.y + 4} text-anchor="middle" font-size="11" font-weight="700" font-family="Space Grotesk, sans-serif" fill={c.text}>{c.n}</text>
 					</g>
 				))}
 			</svg>
@@ -59,7 +59,7 @@ const rooms = [
 
 		<ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 			{rooms.map((r) => (
-				<li class="rounded-2xl border border-[#d3e3e1] bg-white p-5">
+				<li class="rounded-2xl border border-[#f3d9df] bg-white p-5">
 					<span class={`grid size-8 place-items-center rounded-full text-[13px] font-bold text-navy ${r.bg}`}>{r.n}</span>
 					<h4 class="mt-4 font-display text-[18px] font-semibold leading-snug text-navy">{r.title}</h4>
 					<p class="mt-2 text-[13.5px] leading-6 text-navy/75">{r.text}</p>
