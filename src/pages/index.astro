@@ -1,11 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Introduccion from "../components/Introduccion.astro";
+import Metodologia from "../components/Metodologia.astro";
+import Resultados from "../components/Resultados.astro";
+import Discusion from "../components/Discusion.astro";
+import Conclusiones from "../components/Conclusiones.astro";
+import Referencias from "../components/Referencias.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Ascenso en espiral · Integración de las TIC, TAC y TEP">
+	<Header />
+	<main>
+		<Hero />
+		<Introduccion />
+		<Metodologia />
+		<Resultados />
+		<Discusion />
+		<Conclusiones />
+		<Referencias />
+	</main>
+	<Footer />
 </Layout>

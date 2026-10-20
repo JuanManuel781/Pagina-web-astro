@@ -1,0 +1,44 @@
+---
+import Pyramid from './Pyramid.astro';
+
+const stats = [
+	{ value: '47', label: 'estudios incluidos' },
+	{ value: '6', label: 'bases de datos' },
+	{ value: '2020-2026', label: 'periodo analizado' },
+];
+---
+
+<section class="bg-navy text-white">
+	<div class="mx-auto grid max-w-[1200px] items-center gap-12 px-6 py-20 lg:grid-cols-[1.15fr_1fr]">
+		<div>
+			<span class="inline-block rounded-full bg-teal-soft px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.12em] text-navy">
+				1 · Artículo · Revisión sistemática
+			</span>
+			<h1 class="mt-6 font-display text-[46px] font-bold leading-[1.12] md:text-[52px]">
+				Integración de las TIC, TAC y TEP en entornos educativos rurales de Cundinamarca: revisión sistemática
+			</h1>
+			<p class="mt-8 max-w-[660px] text-[19px] leading-8 text-white/90">
+				Un ascenso en espiral de la antena a la comunidad: del acceso a la tecnología, a su uso pedagógico y a la participación.
+			</p>
+			<p class="mt-8 text-[15.5px] leading-6 text-white/90">
+				Sofía Valeria Martínez Salas · Marlene Ibett Mahecha Zárate · Laura Andrea Molina Álvarez<br />
+				Universidad El Bosque · Facultad de Educación
+			</p>
+			<div class="mt-8 flex flex-wrap gap-4">
+				<a href="#introduccion" class="rounded-full bg-amber px-6 py-3.5 text-[16px] font-bold text-navy hover:brightness-105">Iniciar el ascenso</a>
+				<a href="#" class="rounded-full border border-teal-soft px-6 py-3.5 text-[16px] font-bold text-white hover:bg-white/10">Descargar el artículo (PDF)</a>
+			</div>
+			<dl class="mt-12 flex flex-wrap gap-x-8 gap-y-4">
+				{stats.map((s) => (
+					<div>
+						<dt class="font-display text-[38px] font-bold leading-none text-amber">{s.value}</dt>
+						<dd class="mt-2 text-[15px] text-white/90">{s.label}</dd>
+					</div>
+				))}
+			</dl>
+		</div>
+		<div class="flex justify-center">
+			<Pyramid />
+		</div>
+	</div>
+</section>

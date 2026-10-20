@@ -1,0 +1,70 @@
+---
+const w = 47;
+const h = 24;
+const d = 26;
+
+const cubes = [
+	{ n: 1, x: 206, y: 47, top: '#e3f1f0', left: '#8ecbc6', right: '#4aa5a0', text: '#083547' },
+	{ n: 2, x: 122, y: 89, top: '#4aa5a0', left: '#2f7f84', right: '#245f66', text: '#083547' },
+	{ n: 3, x: 290, y: 89, top: '#8ecbc6', left: '#4aa5a0', right: '#2f7f84', text: '#083547' },
+	{ n: 4, x: 206, y: 134, top: '#f2b441', left: '#c98a1e', right: '#9a5f08', text: '#083547' },
+];
+
+const rooms = [
+	{ n: 1, bg: 'bg-mist', title: 'Sala PRISMA 2020', text: 'De 174 registros a 47 estudios: duplicados, cribado y lectura a texto completo.' },
+	{ n: 2, bg: 'bg-teal-soft', title: 'Sala bibliométrica', text: 'VOSviewer: producción por país y red de coocurrencia de palabras clave.' },
+	{ n: 3, bg: 'bg-teal-mid', title: 'Sala de síntesis temática', text: 'Cuatro categorías de análisis y valoración CASP: 87 % de calidad alta.' },
+	{ n: 4, bg: 'bg-amber', title: 'Sala PESTEL y DOFA', text: 'Contraste de los hallazgos con el Plan Departamental de Desarrollo 2024-2028.' },
+];
+---
+
+<section id="metodologia" class="scroll-mt-20 bg-[#f3f9f8] py-[78px]">
+	<div class="mx-auto max-w-[1200px] px-6">
+		<div class="flex flex-wrap items-center gap-2.5">
+			<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0b625f]">
+				Estación 2 · Trazar la ruta
+			</span>
+			<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Metaverso</span>
+		</div>
+		<h2 class="mt-3 font-display text-[40px] font-bold leading-tight text-navy">3. Metodología</h2>
+		<p class="mt-3 max-w-[760px] text-[18px] leading-8 text-navy/80">
+			Recorre en un espacio 3D cómo se construyó la evidencia: cada sala corresponde a un momento del método y del análisis.
+		</p>
+
+		<div class="mt-12 grid items-center gap-10 rounded-[28px] bg-[#0d2f3c] p-10 md:grid-cols-[1fr_1fr] md:px-12 md:py-14">
+			<svg viewBox="-2 -2 416 210" class="mx-auto w-full max-w-[420px]" role="img" aria-label="Plataforma isométrica con cuatro salas numeradas">
+				<polygon points="206,0 412,102 206,206 0,102" fill="#124a56" stroke="#4aa5a0" stroke-width="1.5"></polygon>
+				{cubes.map((c) => (
+					<g>
+						<polygon points={`${c.x - w},${c.y} ${c.x},${c.y + h} ${c.x},${c.y + h + d} ${c.x - w},${c.y + d}`} fill={c.left}></polygon>
+						<polygon points={`${c.x + w},${c.y} ${c.x},${c.y + h} ${c.x},${c.y + h + d} ${c.x + w},${c.y + d}`} fill={c.right}></polygon>
+						<polygon points={`${c.x},${c.y - h} ${c.x + w},${c.y} ${c.x},${c.y + h} ${c.x - w},${c.y}`} fill={c.top}></polygon>
+						<text x={c.x} y={c.y + 4} text-anchor="middle" font-size="11" font-weight="700" font-family="Lexend, sans-serif" fill={c.text}>{c.n}</text>
+					</g>
+				))}
+			</svg>
+
+			<div>
+				<h3 class="font-display text-[28px] font-bold leading-tight text-white">Entra al campamento y recorre el método sala por sala</h3>
+				<p class="mt-5 text-[16px] leading-7 text-white/90">
+					Revisión sistemática con componente bibliométrico, rastreo entre junio y agosto de 2026 en seis bases de datos.
+				</p>
+				<div class="mt-6 flex flex-wrap gap-3">
+					<a href="#" target="_blank" rel="noopener" class="rounded-full bg-amber px-5 py-3 text-[15px] font-bold text-navy hover:brightness-105">Entrar al metaverso</a>
+					<a href="#" class="rounded-full border border-teal-soft px-5 py-3 text-[15px] font-bold text-white hover:bg-white/10">Ver video del recorrido</a>
+				</div>
+				<p class="mt-5 text-[13px] text-teal-soft">Plataforma: [nombre del metaverso] · Se abre en una pestaña nueva</p>
+			</div>
+		</div>
+
+		<ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+			{rooms.map((r) => (
+				<li class="rounded-2xl border border-[#d3e3e1] bg-white p-5">
+					<span class={`grid size-8 place-items-center rounded-full text-[13px] font-bold text-navy ${r.bg}`}>{r.n}</span>
+					<h4 class="mt-4 font-display text-[18px] font-semibold leading-snug text-navy">{r.title}</h4>
+					<p class="mt-2 text-[13.5px] leading-6 text-navy/75">{r.text}</p>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>
