@@ -1,5 +1,6 @@
 ---
-import Pyramid from './Pyramid.astro';
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.jpeg';
 
 const stats = [
 	{ value: '47', label: 'estudios incluidos' },
@@ -38,7 +39,13 @@ const stats = [
 			</dl>
 		</div>
 		<div class="flex justify-center">
-			<Pyramid />
+			<Image
+				src={logo}
+				alt="Mascota de Ascenso en espiral: una comadreja con bata blanca y un espejo dorado en un sendero de montaña"
+				width={520}
+				loading="eager"
+				class="w-full max-w-[460px] rounded-[32px] border-4 border-teal-soft shadow-[0_20px_60px_rgba(0,0,0,0.35)]"
+			/>
 		</div>
 	</div>
 </section>

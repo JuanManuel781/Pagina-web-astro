@@ -1,4 +1,8 @@
 ---
+// Enlace de Canva (el de edición); se convierte al de visualización incrustable.
+const canvaUrl = 'https://www.canva.com/design/DAHYfL2OYqw/OLLXmFqJE8CcTkxzRXRvKQ/edit';
+const canvaEmbed = canvaUrl.replace(/\/(edit|view).*$/, '/view?embed');
+
 const stats = [
 	{ value: '3 de 47', text: 'estudios abordan la tríada completa TIC-TAC-TEP', box: 'bg-navy text-white', num: 'text-amber' },
 	{ value: '34 % · 70 %', text: 'conectividad rural frente a urbana en Cundinamarca', box: 'bg-[#a3154f] text-white', num: 'text-amber' },
@@ -27,20 +31,38 @@ const ruta = [
 ---
 
 <section id="conclusiones" class="scroll-mt-20 bg-white py-[72px]">
-	<div class="mx-auto max-w-[900px] px-6 lg:max-w-[1200px]">
-		<div class="lg:mx-auto lg:max-w-[900px]">
+	<div class="mx-auto max-w-[1200px] px-6">
+		<div>
 			<div class="flex flex-wrap items-center gap-2.5">
 				<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#a3154f]">
 					Estación 5 · Cumbre
 				</span>
-				<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Infografía</span>
+				<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Presentación Canva</span>
 			</div>
 			<h2 class="mt-3 font-display text-[40px] font-bold leading-tight text-navy">6. Conclusiones</h2>
-			<p class="mt-3 text-[16px] leading-7 text-navy/80">
-				Los retos, las oportunidades y la ruta de ascenso en una sola imagen para consultar y compartir.
+			<p class="mt-3 max-w-[760px] text-[18px] leading-8 text-navy/80">
+				Los retos, las oportunidades y la ruta de ascenso en una presentación y una infografía para consultar y compartir.
 			</p>
 
-			<div id="infografia" class="mt-12 rounded-[28px] border border-[#f0d3da] bg-white p-8 md:p-[30px]">
+			<div class="mt-12 rounded-[24px] bg-[#a3154f] p-4 md:p-6">
+				<h3 class="font-display text-[23px] font-bold leading-tight text-white">Del acceso a la comunidad a la cumbre</h3>
+				<p class="mt-2 text-[12.5px] text-white/90">Presentación interactiva · Usa las flechas para avanzar</p>
+				<div class="mt-5 aspect-video overflow-hidden rounded-xl bg-white">
+					<iframe
+						title="Presentación de conclusiones en Canva"
+						src={canvaEmbed}
+						class="size-full border-0"
+						allow="fullscreen"
+						allowfullscreen
+						loading="lazy"
+					></iframe>
+				</div>
+				<p class="mt-4 text-right text-[12.5px] font-semibold text-white underline underline-offset-2">
+					<a href={canvaEmbed.replace('?embed', '')} target="_blank" rel="noopener">Abrir en Canva</a>
+				</p>
+			</div>
+
+			<div id="infografia" class="mt-8 rounded-[28px] border border-[#f0d3da] bg-white p-8 md:p-[30px]">
 				<h3 class="text-center font-display text-[23px] font-bold text-navy">Del acceso a la comunidad: retos, oportunidades y ruta</h3>
 
 				<div class="mt-6 grid gap-3 md:grid-cols-3">
