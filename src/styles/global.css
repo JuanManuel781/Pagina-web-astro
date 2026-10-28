@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #4a1942;
-  --color-teal-soft: #f7a6c4;
-  --color-teal-mid: #e8477f;
-  --color-mist: #fde7ef;
-  --color-amber: #ffa06b;
-  --font-display: "Space Grotesk", system-ui, sans-serif;
-  --font-sans: "DM Sans", system-ui, sans-serif;
+  --color-navy: #083547;
+  --color-teal-soft: #8ecbc6;
+  --color-teal-mid: #4aa5a0;
+  --color-mist: #e3f1f0;
+  --color-amber: #f2b441;
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-sans: "Nunito", system-ui, sans-serif;
 }
 
 html {
@@ -17,5 +17,84 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-navy);
-  background: #fffaf7;
+  background: #ffffff;
+}
+
+/* Transiciones: cada sección aparece suavemente al entrar en pantalla. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Elementos hijos con retraso escalonado. */
+  .js .reveal.is-visible li,
+  .js .reveal.is-visible [data-pop] {
+    animation: pop-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .js .reveal.is-visible li:nth-child(2) { animation-delay: 0.08s; }
+  .js .reveal.is-visible li:nth-child(3) { animation-delay: 0.16s; }
+  .js .reveal.is-visible li:nth-child(4) { animation-delay: 0.24s; }
+  .js .reveal.is-visible li:nth-child(5) { animation-delay: 0.32s; }
+  .js .reveal.is-visible li:nth-child(6) { animation-delay: 0.4s; }
+
+  /* Entrada del hero al cargar la página. */
+  .hero-in {
+    animation: pop-in 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+
+  .hero-in-delay {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+/* Movimientos suaves del hero. */
+@media (prefers-reduced-motion: no-preference) {
+  .float-slow {
+    animation: flotar-y 5s ease-in-out infinite;
+  }
+
+  .float-slower {
+    animation: flotar-y 6.5s ease-in-out -2s infinite;
+  }
+
+  .spin-slow {
+    animation: girar 28s linear infinite;
+  }
+
+  @keyframes flotar-y {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes girar {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }

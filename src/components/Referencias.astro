@@ -1,64 +1,63 @@
 ---
-// Posiciones (px) relativas al lienzo de 900 × 398 en escritorio.
-const branches = [
-	{ title: 'Acceso e infraestructura', refs: 'Cruz et al. (2020) · Muñoz et al. (2025)', side: 'left', top: 49 },
-	{ title: 'Apropiación pedagógica (TAC)', refs: 'Ávila (2024) · Ofosu (2024)', side: 'left', top: 163 },
-	{ title: 'Mitigación: móvil y offline', refs: 'Uribe et al. (2023) · Ferrín et al. (2025)', side: 'left', top: 277 },
-	{ title: 'Empoderamiento (TEP)', refs: 'Mulford et al. (2022) · Yung et al. (2024)', side: 'right', top: 49 },
-	{ title: 'Marco conceptual', refs: 'Cabero (2015) · Mayorga (2020)', side: 'right', top: 163 },
-	{ title: 'Política y contexto', refs: 'PDDC (2024) · UNESCO, UNICEF y CEPAL (2022)', side: 'right', top: 277, warm: true },
-];
+import referencias from '../data/referencias.json';
+import listaCompleta from '../assets/Referencias.docx?url';
+
+// Se muestran las primeras; la lista completa se descarga de src/assets/Referencias.docx.
+const destacadas = referencias.slice(0, 6).map((texto) => {
+	const url = texto.match(/https?:\/\/\S+/)?.[0];
+	return {
+		texto: (url ? texto.replace(url, '') : texto).trim(),
+		url,
+		anio: texto.match(/\((\d{4})\)/)?.[1],
+	};
+});
 ---
 
-<section id="referencias" class="scroll-mt-20 bg-[#fff6f2] py-[68px]">
-	<div class="mx-auto max-w-[900px] px-6 lg:max-w-[1200px]">
-		<div class="lg:mx-auto lg:max-w-[900px]">
-			<div class="flex flex-wrap items-center gap-2.5">
-				<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#a3154f]">
-					Estación 6 · Bitácora
-				</span>
-				<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Mapa mental</span>
-			</div>
-			<h2 class="mt-3 font-display text-[40px] font-bold leading-tight text-navy">7. Referencias</h2>
-			<p class="mt-3 max-w-[600px] text-[16px] leading-7 text-navy/80">
-				Las fuentes organizadas por rama temática. Cada rama abre su lista de referencias en formato APA.
-			</p>
+<section id="referencias" class="scroll-mt-20 bg-white py-[68px]">
+	<div class="reveal mx-auto max-w-[1200px] px-6">
+	<!-- 	<div class="flex flex-wrap items-center gap-2.5">
+			<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0b625f]">
+				Estación 6 · Bitácora
+			</span>
+			<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Bibliografía</span>
+		</div> -->
+		<h2 class="mt-3 font-display text-[40px] font-bold leading-tight text-navy">7. Referencias</h2>
+		<p class="mt-3 max-w-[760px] text-[18px] leading-8 text-navy/80">
+			Las fuentes que sostienen la revisión, en formato APA. Aquí algunas; la lista completa se descarga en Word.
+		</p>
 
-			<div class="mt-12 rounded-[28px] border border-[#f0d3da] bg-white p-6 lg:relative lg:h-[398px] lg:p-0">
-				<svg class="absolute inset-0 hidden h-full w-full lg:block" viewBox="0 0 900 398" fill="none" stroke="#f7a6c4" stroke-width="2" aria-hidden="true">
-					<path d="M288 85H324V313H288M324 199H360"></path>
-					<path d="M612 85H576V313H612M576 199H540"></path>
-				</svg>
-
-				<div class="flex flex-col gap-3 lg:contents">
-					{branches.map((b) => (
-						<a
-							href="#"
-							style={`--t:${b.top}px`}
-							class={`block w-full rounded-xl border px-3 py-3 transition hover:shadow-md lg:absolute lg:top-[var(--t)] lg:h-[72px] lg:w-[180px] ${b.side === 'left' ? 'lg:left-[108px]' : 'lg:left-[612px]'} ${
-								b.warm
-									? 'border-[#f09a4a] bg-[#fff0e0]'
-									: b.side === 'left'
-										? 'border-teal-mid bg-[#fff6f2]'
-										: 'border-[#a3154f] bg-[#fff6f2]'
-							}`}
-						>
-							<span class="block font-display text-[13px] font-semibold leading-[18px] text-navy">{b.title}</span>
-							<span class="mt-1 block text-[10.5px] leading-4 text-navy/70">{b.refs}</span>
-						</a>
-					))}
-
-					<div class="order-first rounded-2xl bg-navy px-4 py-5 text-center text-white lg:absolute lg:left-[360px] lg:top-[157px] lg:order-none lg:h-[84px] lg:w-[180px]">
-						<p class="font-display text-[17px] font-bold">47 estudios</p>
-						<p class="mt-1 text-[12px] text-teal-soft">TIC · TAC · TEP en la ruralidad</p>
+		<ol class="mt-10 grid gap-3 md:grid-cols-2">
+			{destacadas.map((r, i) => (
+				<li class="flex flex-col rounded-2xl border border-[#d3e3e1] bg-white p-5 transition hover:border-teal-mid hover:shadow-md">
+					<div class="flex items-center gap-2.5 text-[11.5px] font-bold">
+						<span class="grid size-6 place-items-center rounded-full bg-mist text-[#0b625f]">{i + 1}</span>
+						{r.anio && <span class="uppercase tracking-[0.1em] text-[#a86a00]">{r.anio}</span>}
 					</div>
-				</div>
-			</div>
+					<p class="mt-3 flex-1 text-[13.5px] leading-6 text-navy/85">{r.texto}</p>
+					{r.url && (
+						<a
+							href={r.url}
+							target="_blank"
+							rel="noopener"
+							class="mt-3 inline-flex w-fit items-center gap-1 text-[12.5px] font-bold text-[#0b625f] hover:underline"
+						>
+							Ver fuente
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>
+						</a>
+					)}
+				</li>
+			))}
+		</ol>
 
-			<div class="mt-8 flex flex-wrap justify-center gap-3">
-				<a href="#" class="rounded-full bg-[#a3154f] px-5 py-3 text-[13px] font-bold text-white hover:brightness-110">Ver lista completa (APA 7)</a>
-				<a href="#" target="_blank" rel="noopener" class="rounded-full border border-teal-soft px-5 py-3 text-[13px] font-bold text-navy hover:bg-mist">Abrir el mapa mental interactivo</a>
+		<div class="mt-6 flex flex-col items-start gap-4 rounded-2xl bg-navy px-6 py-5 text-white md:flex-row md:items-center md:justify-between">
+			<div>
+				<p class="font-display text-[17px] font-semibold leading-tight">Lista completa en formato APA 7</p>
+				<p class="mt-1 text-[13px] text-teal-soft">Documento Word con todas las referencias de la revisión</p>
 			</div>
+			<a href={listaCompleta} download="Referencias.docx" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-[13px] font-bold text-navy hover:brightness-105">
+				<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"></path></svg>
+				Descargar en Word
+			</a>
 		</div>
 	</div>
 </section>

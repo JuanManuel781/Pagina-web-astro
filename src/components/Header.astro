@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import logoBosque from '../assets/universidad_bosque.jpg';
+
 const links = [
 	{ href: '#introduccion', label: 'Introducción' },
 	{ href: '#metodologia', label: 'Metodología' },
-	{ href: '#resultados', label: 'Resultados' },
 	{ href: '#discusion', label: 'Discusión' },
 	{ href: '#conclusiones', label: 'Conclusiones' },
 	{ href: '#referencias', label: 'Referencias' },
@@ -12,20 +14,60 @@ const links = [
 <header class="sticky top-0 z-50 bg-white">
 	<div class="mx-auto flex h-[74px] max-w-[1200px] items-center justify-between gap-6 px-6">
 		<a href="#" class="flex items-center gap-3">
-			<svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true">
-				<polygon points="17,0 34,30 0,30" fill="#e8477f"></polygon>
-				<polygon points="17,0 24,12 10,12" fill="#4a1942"></polygon>
-				<polygon points="10,12 24,12 29,21 5,21" fill="#c93a72"></polygon>
-			</svg>
+			<!-- El JPG trae mucho margen blanco: se recorta mostrando solo el escudo y el nombre. -->
+			<span class="block h-[60px] w-[60px] shrink-0 overflow-hidden">
+				<Image
+					src={logoBosque}
+					alt="Universidad El Bosque"
+					height={176}
+					loading="eager"
+					class="h-[88px] w-auto max-w-none"
+					style="margin-left:-47px;margin-top:-14px"
+				/>
+			</span>
 			<span class="leading-tight">
-				<span class="block font-display text-[19px] font-semibold text-navy">Ascenso en espiral</span>
+				<span class="block font-display text-[19px] font-semibold text-navy">Recurso digital </span>
 				<span class="block text-[12.5px] text-navy/70">
-					Recurso digital · Maestría en Innovación y Tecnologías para la Educación
+					 Maestría en Innovación y Tecnologías para la Educación
 				</span>
 			</span>
 		</a>
 		<nav class="hidden items-center gap-7 text-[14.5px] font-semibold text-navy lg:flex">
-			{links.map((l) => <a href={l.href} class="hover:text-teal-mid">{l.label}</a>)}
+			{links.map((l) => (
+				<a href={l.href} data-nav-link class="border-b-2 border-transparent py-1 transition-colors hover:text-teal-mid data-[active=true]:border-amber data-[active=true]:text-[#0b625f]">{l.label}</a>
+			))}
 		</nav>
 	</div>
+	<div class="h-[3px] w-full bg-transparent"><div data-progress class="h-full w-0 bg-amber"></div></div>
 </header>
+
+<script>
+	const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-nav-link]')];
+	const bar = document.querySelector<HTMLElement>('[data-progress]');
+
+	// Quita del menú los enlaces cuya sección no existe en la página.
+	const sections = links.flatMap((link) => {
+		const section = document.getElementById(link.hash.slice(1));
+		if (!section) {
+			link.remove();
+			return [];
+		}
+		return [{ link, section }];
+	});
+
+	const update = () => {
+		const max = document.documentElement.scrollHeight - window.innerHeight;
+		if (bar) bar.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
+
+		const line = window.innerHeight * 0.35;
+		let current: HTMLAnchorElement | undefined;
+		for (const { link, section } of sections) {
+			if (section.getBoundingClientRect().top <= line) current = link;
+		}
+		sections.forEach(({ link }) => link.setAttribute('data-active', String(link === current)));
+	};
+
+	window.addEventListener('scroll', update, { passive: true });
+	window.addEventListener('resize', update);
+	update();
+</script>
