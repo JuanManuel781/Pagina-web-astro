@@ -10,11 +10,10 @@ import Discusion from "../components/Discusion.astro";
 import Conclusiones from "../components/Conclusiones.astro";
 import Referencias from "../components/Referencias.astro";
 import Footer from "../components/Footer.astro";
-import Mascota from '../components/Mascota.astro';
 
 const blanco = '#ffffff';
-const verde = '#f3f9f8';
-const oscuro = '#083547';
+const verde = 'var(--color-tint)';
+const oscuro = 'var(--color-navy)';
 ---
 
 <Layout title="Ascenso en espiral · Integración de las TIC, TAC y TEP">
@@ -35,5 +34,4 @@ const oscuro = '#083547';
 	</main>
 	<Divider from={blanco} to={oscuro} />
 	<Footer />
-	<Mascota />
 </Layout>

@@ -16,22 +16,23 @@ const destacadas = referencias.slice(0, 6).map((texto) => {
 <section id="referencias" class="scroll-mt-20 bg-white py-[68px]">
 	<div class="reveal mx-auto max-w-[1200px] px-6">
 	<!-- 	<div class="flex flex-wrap items-center gap-2.5">
-			<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0b625f]">
+			<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-deep">
 				Estación 6 · Bitácora
 			</span>
 			<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Bibliografía</span>
 		</div> -->
 		<h2 class="mt-3 font-display text-[40px] font-bold leading-tight text-navy">7. Referencias</h2>
+		<span class="mt-4 block h-1.5 w-20 rounded-full bg-gradient-to-r from-amber to-teal-mid" aria-hidden="true"></span>
 		<p class="mt-3 max-w-[760px] text-[18px] leading-8 text-navy/80">
 			Las fuentes que sostienen la revisión, en formato APA. Aquí algunas; la lista completa se descarga en Word.
 		</p>
 
 		<ol class="mt-10 grid gap-3 md:grid-cols-2">
 			{destacadas.map((r, i) => (
-				<li class="flex flex-col rounded-2xl border border-[#d3e3e1] bg-white p-5 transition hover:border-teal-mid hover:shadow-md">
+				<li class="flex flex-col rounded-2xl border border-line bg-white p-5 transition hover:border-teal-mid hover:shadow-md">
 					<div class="flex items-center gap-2.5 text-[11.5px] font-bold">
-						<span class="grid size-6 place-items-center rounded-full bg-mist text-[#0b625f]">{i + 1}</span>
-						{r.anio && <span class="uppercase tracking-[0.1em] text-[#a86a00]">{r.anio}</span>}
+						<span class="grid size-6 place-items-center rounded-full bg-mist text-deep">{i + 1}</span>
+						{r.anio && <span class="uppercase tracking-[0.1em] text-amber-ink">{r.anio}</span>}
 					</div>
 					<p class="mt-3 flex-1 text-[13.5px] leading-6 text-navy/85">{r.texto}</p>
 					{r.url && (
@@ -39,7 +40,7 @@ const destacadas = referencias.slice(0, 6).map((texto) => {
 							href={r.url}
 							target="_blank"
 							rel="noopener"
-							class="mt-3 inline-flex w-fit items-center gap-1 text-[12.5px] font-bold text-[#0b625f] hover:underline"
+							class="mt-3 inline-flex w-fit items-center gap-1 text-[12.5px] font-bold text-deep hover:underline"
 						>
 							Ver fuente
 							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"></path></svg>

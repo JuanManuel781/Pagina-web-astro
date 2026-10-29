@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets';
-import logo from '../assets/logo.jpeg';
+import Pyramid from './Pyramid.astro';
 
 const stats = [
 	{ value: '47', label: 'estudios incluidos' },
@@ -8,15 +7,29 @@ const stats = [
 	{ value: '2020-2026', label: 'periodo analizado' },
 ];
 ---
+<section class="relative overflow-hidden bg-navy text-white">
+	<!-- Fondo decorativo: resplandores, montañas en capas y puntos flotantes. -->
+	<div class="pointer-events-none absolute inset-0" aria-hidden="true">
+		<div class="absolute -right-32 -top-32 size-[520px] rounded-full bg-teal-mid/25 blur-3xl"></div>
+		<div class="absolute -left-40 bottom-0 size-[420px] rounded-full bg-amber/10 blur-3xl"></div>
+		<span class="float-slow absolute left-[8%] top-[18%] size-3 rounded-full bg-amber/80"></span>
+		<span class="float-slower absolute left-[46%] top-[12%] size-2 rounded-full bg-teal-soft/80"></span>
+		<span class="float-slow absolute right-[10%] top-[60%] size-4 rounded-full border-2 border-amber/70"></span>
+		<span class="float-slower absolute left-[30%] bottom-[24%] size-2.5 rounded-full bg-teal-soft/60"></span>
+		<svg viewBox="0 0 1440 220" preserveAspectRatio="none" class="absolute inset-x-0 bottom-0 h-[150px] w-full md:h-[220px]">
+			<path d="M0,170 L160,90 L300,150 L470,40 L640,140 L800,70 L980,150 L1160,60 L1300,120 L1440,80 L1440,220 L0,220 Z" fill="var(--color-teal-deep)" opacity="0.22"></path>
+			<path d="M0,200 L200,130 L360,180 L560,100 L720,170 L900,110 L1100,175 L1280,120 L1440,160 L1440,220 L0,220 Z" fill="var(--color-teal-mid)" opacity="0.18"></path>
+			<path d="M0,215 L240,170 L460,205 L700,160 L940,205 L1180,165 L1440,200 L1440,220 L0,220 Z" fill="var(--color-night)" opacity="0.55"></path>
+		</svg>
+	</div>
 
-<section class="bg-navy text-white">
-	<div class="mx-auto grid max-w-[1200px] items-center gap-12 px-6 py-20 lg:grid-cols-[1.15fr_1fr]">
+	<div class="relative mx-auto grid max-w-[1200px] items-center gap-12 px-6 pb-32 pt-20 lg:grid-cols-[1.15fr_1fr]">
 		<div class="hero-in">
 			<span class="inline-block rounded-full bg-teal-soft px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.12em] text-navy">
 				1 · Artículo · Revisión sistemática
 			</span>
 			<h1 class="mt-6 font-display text-[46px] font-bold leading-[1.12] md:text-[52px]">
-				Integración de las TIC, TAC y TEP en entornos educativos rurales de Cundinamarca: revisión sistemática
+				Integración de las <span class="text-amber">TIC, TAC y TEP</span> en entornos educativos rurales de Cundinamarca: revisión sistemática
 			</h1>
 			<p class="mt-8 max-w-[660px] text-[19px] leading-8 text-white/90">
 				Del acceso a las TIC, TAC a su uso pedagógico y a la participación.
@@ -38,27 +51,11 @@ const stats = [
 				))}
 			</dl>
 		</div>
-		<div class="hero-in hero-in-delay relative mx-auto w-full max-w-[420px] px-4 py-8">
-			<div class="absolute inset-x-0 top-1/2 h-[80%] -translate-y-1/2 rounded-full bg-teal-mid/30 blur-3xl" aria-hidden="true"></div>
-			<div class="spin-slow absolute -right-2 top-4 size-36 rounded-full border-2 border-dashed border-amber/70" aria-hidden="true"></div>
-			<div class="absolute -left-2 bottom-10 size-20 rounded-full bg-amber/90" aria-hidden="true"></div>
-
-			<div class="float-slow relative">
-				<div class="absolute inset-0 translate-x-4 translate-y-4 rounded-t-full rounded-b-[44px] border-2 border-amber" aria-hidden="true"></div>
-				<div class="relative aspect-[4/5] overflow-hidden rounded-t-full rounded-b-[44px] border-4 border-white shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
-					<Image
-						src={logo}
-						alt="Mascota de Ascenso en espiral: una comadreja con bata blanca y un espejo dorado en un sendero de montaña"
-						width={620}
-						loading="eager"
-						class="size-full object-cover object-[50%_30%]"
-					/>
-				</div>
-
-				<span class="float-slower absolute -right-4 top-[22%] rounded-full bg-amber px-4 py-2 font-display text-[14px] font-bold text-navy shadow-lg">TEP</span>
-				<span class="float-slow absolute -left-6 top-[50%] rounded-full bg-teal-soft px-4 py-2 font-display text-[14px] font-bold text-navy shadow-lg">TAC</span>
-				<span class="float-slower absolute -right-6 bottom-[14%] rounded-full bg-teal-mid px-4 py-2 font-display text-[14px] font-bold text-white shadow-lg">TIC</span>
-			</div>
+		<div class="hero-in hero-in-delay flex justify-center">
+			<Pyramid />
 		</div>
 	</div>
+	<a href="#introduccion" aria-label="Bajar a la introducción" class="absolute bottom-6 left-1/2 hidden -translate-x-1/2 animate-bounce rounded-full border border-white/40 p-2 text-white/80 hover:text-amber md:block">
+		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+	</a>
 </section>

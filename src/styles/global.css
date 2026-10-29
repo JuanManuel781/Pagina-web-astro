@@ -1,14 +1,23 @@
 @import "tailwindcss";
 
+/* Paleta de colores del sitio. */
 @theme {
   --color-navy: #083547;
-  --color-teal-soft: #8ecbc6;
+  --color-night: #0d2f3c;
+  --color-deep: #0b625f;
+  --color-teal-deep: #2f7f84;
   --color-teal-mid: #4aa5a0;
+  --color-teal-soft: #8ecbc6;
   --color-mist: #e3f1f0;
+  --color-tint: #f3f9f8;
+  --color-line: #d3e3e1;
   --color-amber: #f2b441;
+  --color-amber-ink: #a86a00;
+  --color-warm: #fff6e6;
   --font-display: "Poppins", system-ui, sans-serif;
   --font-sans: "Nunito", system-ui, sans-serif;
 }
+
 
 html {
   scroll-behavior: smooth;

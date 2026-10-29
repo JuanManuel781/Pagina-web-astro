@@ -5,8 +5,8 @@ const canvaEmbed = canvaUrl.replace(/\/(edit|view).*$/, '/view?embed');
 
 const stats = [
 	{ value: '3 de 47', text: 'estudios abordan la tríada completa TIC-TAC-TEP', box: 'bg-navy text-white', num: 'text-amber' },
-	{ value: '34 % · 70 %', text: 'conectividad rural frente a urbana en Cundinamarca', box: 'bg-[#0b625f] text-white', num: 'text-amber' },
-	{ value: '0', text: 'metas educativas del PDDC con enfoque de empoderamiento (TEP)', box: 'bg-[#e3f1f0] text-navy', num: 'text-navy' },
+	{ value: '34 % · 70 %', text: 'conectividad rural frente a urbana en Cundinamarca', box: 'bg-deep text-white', num: 'text-amber' },
+	{ value: '0', text: 'metas educativas del PDDC con enfoque de empoderamiento (TEP)', box: 'bg-mist text-navy', num: 'text-navy' },
 ];
 
 const retos = [
@@ -22,29 +22,30 @@ const oportunidades = [
 ];
 
 const ruta = [
-	{ n: 1, label: 'Diagnosticar', bg: '#8ecbc6', fg: '#083547' },
-	{ n: 2, label: 'Formar', bg: '#4aa5a0', fg: '#083547' },
-	{ n: 3, label: 'Adaptar', bg: '#2f7f84', fg: '#083547' },
-	{ n: 4, label: 'Participar', bg: '#0b625f', fg: '#ffffff' },
-	{ n: 5, label: 'Evaluar', bg: '#083547', fg: '#ffffff' },
+	{ n: 1, label: 'Diagnosticar', bg: 'var(--color-teal-soft)', fg: 'var(--color-navy)' },
+	{ n: 2, label: 'Formar', bg: 'var(--color-teal-mid)', fg: 'var(--color-navy)' },
+	{ n: 3, label: 'Adaptar', bg: 'var(--color-teal-deep)', fg: 'var(--color-navy)' },
+	{ n: 4, label: 'Participar', bg: 'var(--color-deep)', fg: '#ffffff' },
+	{ n: 5, label: 'Evaluar', bg: 'var(--color-navy)', fg: '#ffffff' },
 ];
 ---
 
-<section id="conclusiones" class="scroll-mt-20 bg-[#f3f9f8] py-[72px]">
+<section id="conclusiones" class="scroll-mt-20 bg-tint py-[72px]">
 	<div class="reveal mx-auto max-w-[1200px] px-6">
 		<div>
 			<div class="flex flex-wrap items-center gap-2.5">
-				<!-- <span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0b625f]">
+				<!-- <span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-deep">
 					Estación 5 · Cumbre
 				</span>
 				<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Presentación Canva</span> -->
 			</div>
 			<h2 class="mt-3 font-display text-[40px] font-bold leading-tight text-navy">6. Conclusiones</h2>
+		<span class="mt-4 block h-1.5 w-20 rounded-full bg-gradient-to-r from-amber to-teal-mid" aria-hidden="true"></span>
 			<p class="mt-3 max-w-[760px] text-[18px] leading-8 text-navy/80">
 				Los retos, las oportunidades y la ruta de ascenso en una presentación y una infografía para consultar y compartir.
 			</p>
 
-			<div class="mt-12 rounded-[24px] bg-[#0b625f] p-4 md:p-6">
+			<div class="mt-12 rounded-[24px] bg-deep p-4 md:p-6">
 				<h3 class="font-display text-[23px] font-bold leading-tight text-white">Del acceso a la comunidad a la cumbre</h3>
 				<p class="mt-2 text-[12.5px] text-white/90">Presentación interactiva · Usa las flechas para avanzar</p>
 				<div class="mt-5 aspect-video overflow-hidden rounded-xl bg-white">
@@ -62,7 +63,7 @@ const ruta = [
 				</p>
 			</div>
 
-			<div id="infografia" class="mt-8 rounded-[28px] border border-[#cfe3e1] bg-white p-8 md:p-[30px]">
+			<div id="infografia" class="mt-8 rounded-[28px] border border-line bg-white p-8 md:p-[30px]">
 				<h3 class="text-center font-display text-[23px] font-bold text-navy">Del acceso a la comunidad: retos, oportunidades y ruta</h3>
 
 				<div class="mt-6 grid gap-3 md:grid-cols-3">
@@ -75,14 +76,14 @@ const ruta = [
 				</div>
 
 				<div class="mt-6 grid gap-4 md:grid-cols-2">
-					<div class="rounded-[18px] bg-[#fff6e6] px-[18px] py-5">
-						<h4 class="font-display text-[17px] font-semibold text-[#a86a00]">Retos</h4>
+					<div class="rounded-[18px] bg-warm px-[18px] py-5">
+						<h4 class="font-display text-[17px] font-semibold text-amber-ink">Retos</h4>
 						<ul class="mt-3 space-y-2.5 text-[13px] leading-5 text-navy">
 							{retos.map((r) => <li><strong class="font-bold">{r.b}</strong> {r.t}</li>)}
 						</ul>
 					</div>
-					<div class="rounded-[18px] bg-[#e3f1f0] px-[18px] py-5">
-						<h4 class="font-display text-[17px] font-semibold text-[#0b625f]">Oportunidades</h4>
+					<div class="rounded-[18px] bg-mist px-[18px] py-5">
+						<h4 class="font-display text-[17px] font-semibold text-deep">Oportunidades</h4>
 						<ul class="mt-3 space-y-2.5 text-[13px] leading-5 text-navy">
 							{oportunidades.map((o) => <li><strong class="font-bold">{o.b}</strong> {o.t}</li>)}
 						</ul>
@@ -105,7 +106,7 @@ const ruta = [
 			</div>
 
 			<div class="mt-8 flex flex-wrap justify-center gap-3">
-				<a href="#" download class="rounded-full bg-[#0b625f] px-5 py-3 text-[13px] font-bold text-white hover:brightness-110">Descargar infografía (PDF)</a>
+				<a href="#" download class="rounded-full bg-deep px-5 py-3 text-[13px] font-bold text-white hover:brightness-110">Descargar infografía (PDF)</a>
 				<button type="button" data-fullscreen-infographic class="rounded-full border border-teal-soft px-5 py-3 text-[13px] font-bold text-navy hover:bg-mist">Ver en tamaño completo</button>
 			</div>
 		</div>

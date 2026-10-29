@@ -26,24 +26,25 @@ const chapters = [
 <section id="introduccion" class="scroll-mt-20 bg-white py-[88px]">
 	<div class="reveal mx-auto max-w-[1200px] px-6">
 		<!-- <div class="flex flex-wrap items-center gap-2.5">
-			<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-[#0b625f]">
+			<span class="rounded-full bg-mist px-3 py-1.5 text-[12px] font-bold uppercase tracking-[0.1em] text-deep">
 				Estación 1 · Campamento base
 			</span>
 			<span class="rounded-full bg-navy px-3 py-1.5 text-[12px] font-bold text-white">Podcast</span>
 		</div> -->
 		<h2 class="mt-3 font-display text-[40px] font-bold leading-tight text-navy">2. Introducción</h2>
+		<span class="mt-4 block h-1.5 w-20 rounded-full bg-gradient-to-r from-amber to-teal-mid" aria-hidden="true"></span>
 		<p class="mt-3 max-w-[760px] text-[18px] leading-8 text-navy/80">
 			Escuche el punto de partida: qué son las TIC, TAC y TEP, qué dicen los antecedentes y cuál es el marco que orienta la revisión.
 		</p>
 
-		<div class="mt-12 grid gap-8 rounded-[28px] bg-[#f1f7f6] p-8 md:grid-cols-[300px_1fr]">
-			<div class="relative flex min-h-[340px] flex-col justify-between rounded-[20px] bg-[#0b625f] p-6">
+		<div class="mt-12 grid gap-8 rounded-[28px] bg-tint p-8 md:grid-cols-[300px_1fr]">
+			<div class="relative flex min-h-[340px] flex-col justify-between rounded-[20px] bg-deep p-6">
 				<span class="text-[11.5px] font-bold uppercase tracking-[0.14em] text-teal-soft">Podcast · Episodio 1</span>
 				<svg viewBox="0 0 230 112" class="mx-auto w-[230px]" aria-hidden="true">
-					<polygon points="115,0 153,42 77,42" fill="#e3f1f0"></polygon>
-					<polygon points="77,42 153,42 230,112 0,112" fill="#4aa5a0"></polygon>
-					<rect x="98" y="52" width="34" height="46" rx="17" fill="#083547"></rect>
-					<rect x="109" y="96" width="12" height="10" fill="#083547"></rect>
+					<polygon points="115,0 153,42 77,42" fill="var(--color-mist)"></polygon>
+					<polygon points="77,42 153,42 230,112 0,112" fill="var(--color-teal-mid)"></polygon>
+					<rect x="98" y="52" width="34" height="46" rx="17" fill="var(--color-navy)"></rect>
+					<rect x="109" y="96" width="12" height="10" fill="var(--color-navy)"></rect>
 				</svg>
 				<p class="font-display text-[25px] font-bold leading-tight text-white">Del acceso a la comunidad</p>
 			</div>
@@ -71,16 +72,16 @@ const chapters = [
 					</p>
 				)}
 
-				<p class="mt-8 text-[12.5px] font-bold uppercase tracking-[0.12em] text-[#0b625f]">Capítulos</p>
+				<p class="mt-8 text-[12.5px] font-bold uppercase tracking-[0.12em] text-deep">Capítulos</p>
 				<ul class="mt-3 grid gap-3 md:grid-cols-2">
 					{chapters.map((c) => (
-						<li class="rounded-xl border border-[#d3e3e1] bg-white px-4 py-3.5 text-[15px] text-navy">
-							<strong class="font-bold text-[#0b625f]">{c.n}</strong> · {c.title}
+						<li class="rounded-xl border border-line bg-white px-4 py-3.5 text-[15px] text-navy transition hover:-translate-y-0.5 hover:border-teal-mid hover:shadow-md">
+							<strong class="font-bold text-deep">{c.n}</strong> · {c.title}
 						</li>
 					))}
 				</ul>
 
-				<div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[15px] font-semibold text-[#0b625f] underline underline-offset-2">
+				<div class="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[15px] font-semibold text-deep underline underline-offset-2">
 					<a href="#">Leer la transcripción</a>
 					
 					<a href={spotifyUrl || "#"} target="_blank" rel="noopener">Escuchar en Spotify</a>
